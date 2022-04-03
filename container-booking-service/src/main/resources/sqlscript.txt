@@ -1,0 +1,16 @@
+create keyspace maersk with replication={'class':'SimpleStrategy', 'replication_factor':1};
+
+use maersk;
+
+CREATE TABLE bookings(
+   id uuid PRIMARY KEY,
+   containerType text,
+   containerSize int,
+   origin text,
+   destination text,
+   quantity int,
+   timestamp timestamp
+);
+
+
+DROP TABLE maersk.bookings;
